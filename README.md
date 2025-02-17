@@ -44,6 +44,8 @@ Input AC signal: DC offset=0.9V  ;  Amplitude=50mV ;  Frequency=1kHz
 
 ![WhatsApp Image 2025-02-15 at 13 51 49_860626ca](https://github.com/user-attachments/assets/2e2e418a-d16d-4c8e-97c3-3b56181c4e2d)
 
+DC operating point Q( 1.8V, 27.77uA).
+
 DC analysis is done to ensure whether the mosfet operates in saturation region and to calculate the DC operationg point of the transistor. This prevents signal distortion, which helps in the determination of the biasing resistors.This helps in getting a correct operating point despite the fluctuation in the other parameters.
 
 Here, L=250nm, W=0.05um .
@@ -63,6 +65,7 @@ So here, Vgs>Vth and Vds>Vov
 
    FET is in saturation.
 
+DC operating point Q( 1.8V, 27.77uA).
 #  Transient analysis
 
 Analyzing a circuit's response to changing signals is crucial for understanding its performance. This analysis reveals how the circuit might distort the signal, introduce unwanted DC offsets between input and output, or cause timing issues like phase distortion.  Such information is vital for identifying and correcting problems within the circuit.
@@ -101,8 +104,11 @@ To analyze the performance characteristics of a Common-Source amplifier employin
 
 ## Key components used
 1.NMOS Transistor: The main amplifying device.
+
 2.PMOS Transistor: Acts as the active load.
+
 3.DC Voltage Sources (VDD): Provides the necessary bias voltages.
+
 4.Output (Vout): Delivers the inverted signal based on the input applied to V1.
 
 ## Circuit diagram
@@ -160,6 +166,7 @@ Vout=1.79532
 Id = 27.322uA
 
 Given, P= 50um, V=1.8V
+
 We know that, P=VI
 
 Therefore, I=27.77uA
@@ -170,9 +177,13 @@ Therefore, Vsg>|Vth| and Vsd>|Vov|
 
 Hence, FET(PMOS) is in saturation region.
 
+DC operating point of PMOS is (1.79V,27.77uA)
+
 Also, Vgs=0.9V, Vth= 0.366V , Vov=0.534 , Vds=1.8V
 
 Hence, FET(NMOS) is in saturation region.
+
+DC operating point of NMOS is (1.8V,27.77uA)
 #  Transient analysis
 Transient analysis simulates the amplifier's time-domain response to a time-varying input signal, such as a sinusoidal or square wave.  This analysis reveals the output waveform, allowing observation of distortion, clipping, and other non-linear effects.  Key parameters like voltage gain and propagation delay are determined by comparing input and output signal characteristics.  The transient response also helps assess the amplifier's ability to accurately reproduce the input signal and reveals any transient effects like overshoot or ringing.  Specifically, the switching behavior of the NMOS and PMOS transistors is examined.  Ultimately, transient analysis verifies if the amplifier meets design requirements for speed, signal fidelity, and other dynamic performance metrics.
 We can observe 180 degree phase shift between input and output and a DC level phase shift.
