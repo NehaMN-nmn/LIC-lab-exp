@@ -179,9 +179,13 @@ This AC analysis measures how well the NMOS common-source amplifier amplifies si
 #  Inference
 
 1.The DC operating point established by V3(0.3V) and the transistor sizes ensures both PMOS and NMOS are in the appropriate operating region for amplification that is the saturation region.
+
 2.The AC analysis demonstrates a certain voltage gain at midband frequencies, indicating the amplifier's ability to boost the input signal.
+
 3.The observed bandwidth indicates the range of frequencies over which the amplifier provides effective amplification before the gain significantly drops.
+
 4.The transient analysis reveals the amplifier's time-domain response to input signals.
+
 5.The combination of NMOS and PMOS transistors as a load offers performance advantages compared to using a simple resistive load, as evidenced by the gain and bandwidth achieved.
 
 
