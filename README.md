@@ -79,6 +79,7 @@ This is done to determine the Gain of the amplifier circuit,which also helps to 
 
 ![WhatsApp Image 2025-02-15 at 13 53 01_770e196e](https://github.com/user-attachments/assets/28396fdd-12f6-4842-bd8b-cbe2401f6245)
 
+Voltage gain= -6dB
 #  Inference
 
 1.Current Id mainly depends on width and hence it changes when the width changes whereas the remaining parameters remains almost constant.
@@ -167,8 +168,11 @@ Vs= 1.8V , Vg=0.3V , Vsg=1.5V , Vth= -0.366V , Vsd= 1.79V.
 
 Therefore, Vsg>|Vth| and Vsd>|Vov|
 
-Hence, FET is in saturation region.
+Hence, FET(PMOS) is in saturation region.
 
+Also, Vgs=0.9V, Vth= 0.366V , Vov=0.534 , Vds=1.8V
+
+Hence, FET(NMOS) is in saturation region.
 #  Transient analysis
 Transient analysis simulates the amplifier's time-domain response to a time-varying input signal, such as a sinusoidal or square wave.  This analysis reveals the output waveform, allowing observation of distortion, clipping, and other non-linear effects.  Key parameters like voltage gain and propagation delay are determined by comparing input and output signal characteristics.  The transient response also helps assess the amplifier's ability to accurately reproduce the input signal and reveals any transient effects like overshoot or ringing.  Specifically, the switching behavior of the NMOS and PMOS transistors is examined.  Ultimately, transient analysis verifies if the amplifier meets design requirements for speed, signal fidelity, and other dynamic performance metrics.
 We can observe 180 degree phase shift between input and output and a DC level phase shift.
@@ -182,6 +186,7 @@ This AC analysis measures how well the NMOS common-source amplifier amplifies si
 
 ![WhatsApp Image 2025-02-17 at 22 23 20_2347dbb2](https://github.com/user-attachments/assets/152bd9ba-a48e-4178-af2d-f9cc4fb17e3e)
 
+Voltage gain= 42dB
 #  Inference
 
 1.The DC operating point established by V3(0.3V) and the transistor sizes ensures both PMOS and NMOS are in the appropriate operating region for amplification that is the saturation region.
