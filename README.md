@@ -163,6 +163,12 @@ We know that, P=VI
 
 Therefore, I=27.77uA
 
+Vs= 1.8V , Vg=0.3V , Vsg=1.5V , Vth= -0.366V , Vsd= 1.79V.
+
+Therefore, Vsg>|Vth| and Vsd>|Vov|
+
+Hence, FET is in saturation region.
+
 #  Transient analysis
 Transient analysis simulates the amplifier's time-domain response to a time-varying input signal, such as a sinusoidal or square wave.  This analysis reveals the output waveform, allowing observation of distortion, clipping, and other non-linear effects.  Key parameters like voltage gain and propagation delay are determined by comparing input and output signal characteristics.  The transient response also helps assess the amplifier's ability to accurately reproduce the input signal and reveals any transient effects like overshoot or ringing.  Specifically, the switching behavior of the NMOS and PMOS transistors is examined.  Ultimately, transient analysis verifies if the amplifier meets design requirements for speed, signal fidelity, and other dynamic performance metrics.
 We can observe 180 degree phase shift between input and output and a DC level phase shift.
