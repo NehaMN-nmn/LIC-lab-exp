@@ -174,7 +174,7 @@ Here the value obtained from the analysis exactly equal to our theoritical value
 
 #  Circuit 2
 
-#  introduction
+#  Introduction
 
 ![exp22_circuit diagram](https://github.com/user-attachments/assets/1ae9ded4-5859-408a-9dec-96e805b737a0)
 
@@ -253,23 +253,214 @@ Gain(Av)= Vout/Vin
 
  Gain in dB = 20*log (1.83)       
 
-        19.74
+        19.74dB
 
 #  DC Sweep
 
+![exp23 dc sweep current sorce](https://github.com/user-attachments/assets/0c013e88-8978-458c-8889-59254bec7d8f)
+
+We can observe the distorted output.
+
+From the graph Vipp=1.712-0.722
+
+                =0.99V
+
+Here Vicm(min)= Vth1+Vp
+        =0.473+0.4
+   Vicm(min) =0.873V
+
+Also,
+
+Vocm(max)= Vdd-(Iss*Rd)/2 +Vth
+
+       =2-(0.5*3.6)/2 +0.473
+
+ Vocm(max) = 1.573V
+
+ average of   Vicm(min) and  Vocm(max) =(0.873+1.573)/2
+
+             =1.223V
+
+#  AC analysis   
+
+![exp22_ac analysis](https://github.com/user-attachments/assets/071cfd0c-dbc4-45c6-8e8c-73f0d5ac9ac4)
 
 
+#  Circuit 3
 
-        
+#  Introduction
+
+This diagram presents a modified differential amplifier circuit where the traditional tail resistor has been substituted with an NMOS transistor (M3). This configuration aims to enhance the amplifier's performance by providing a more controlled and potentially more stable bias current through the differential pair (M1 and M2). By utilizing an NMOS transistor as a current source, the circuit can achieve improved common-mode rejection and a more predictable operating point, leading to enhanced accuracy and stability in amplifying the difference between the input signals (V2 and V1). The inclusion of an NMOS current source allows for better control over the bias current, which is crucial for achieving optimal performance in various applications requiring precise signal processing and immunity to common-mode noise. The circuit maintains its fundamental function of amplifying the differential input while rejecting common-mode signals, but with potential performance improvements due to the active current source biasing.
+
+![exp23_diagram](https://github.com/user-attachments/assets/a3e076c6-dacd-402f-a931-616278fe4f18)
+
+Note: NMOS transistor operates in saturation region to act as an amplifier.
+
+For M1 and M2:
+
+MODEL : CMOSN 
+
+MOSFET length(L): 300nm
+
+MOSFET width(W): 29.904um
+
+Resistor(R1 and R2): 3.6k
+
+Voltage supply(Vdd): 2V
+
+Input AC signal: DC offset=1V  ;  Amplitude=50mV ;  Frequency=1kHz
+
+For M3:
+
+MODEL : CMOSN 
+
+MOSFET length(L): 300nm
+
+MOSFET width(W): 8.08385um
+
+## Key components used
+
+1. M1 and M2: These are the primary NMOS transistors forming the differential pair, responsible for amplifying the difference between the input signals (V2 and 
+       V1).
+
+2. M3 : This NMOS transistor acts as the current source, replacing the traditional resistor(RSS) and providing a more stable bias current for the differential pair.
+
+3. R1 and R2 : These are the load resistors connected to the drains of M1 and M2, converting the amplified current into an output voltage.
+
+4. V3: This is the DC power supply, providing the operating voltage for the amplifier circuit.
+
+5. V2 and V1: These are the input voltage sources, applying the differential input signals to be amplified.
+
+#  DC Analysis 
+
+![image](https://github.com/user-attachments/assets/a9c62855-075c-41ea-8002-a48d99c5e446)
+
+For M1 and M2;
+
+Iss= P/Vdd = 1mW/2V =0.5mA
+
+Rd=(Vdd-Vocm)/Id1 = (2-1.1)/0.25mA = 3.6kohm
+
+Rss=Vp/Iss= 0.4/0.5m= 800ohm=0.8kohm
+
+Coming to the MOSFETS M1 and M2;
+
+Vds=0.7V
+
+Vgs=0.6V
+
+Vgd=-0.1V
+
+Vth=0.47V
+
+Vov=0.6-0.47=0.13V
+
+Hence here Vgd<Vth
+
+and Vds>Vov.
+
+So, FET is in saturation region.
+
+## For M3;
+
+Vds=0.4V
+
+Vgs=0.87V
+
+Vgd=0.47V
+
+Vov=0.4V
+
+so, here Vgd<Vth
+
+and Vds>Vov.
+
+FET(M3) is in saturation region.
+
+Here in the analysis Vout=1.1V and Vp=0.4V is exactly matching with our theoritical value.
+
+## Calculation for V4
+
+       V4=Vp+Vth
+
+       =0.4+0.473
+
+      V4=0.873V
+
+#  Transient analysis
+
+![exp2,3_transient analysis](https://github.com/user-attachments/assets/cdb5d9d9-c1f8-4e89-9874-9dc5bb3ed67d)
+
+We can observe 180 degree phase shift between input and output voltage.
+
+# Output of transient analysis
+
+![exp2,3_transient output](https://github.com/user-attachments/assets/ec803763-8e27-41dc-8188-42a211caeeca)
 
 
+Gain(Av)= Vout/Vin
 
+       =(1.575-0.623)/(1.050-0.9503)
 
+       = 9.5486
+    
+Here the value obtained from the analysis exactly equal to our theoritical value 5.2490dB.
 
+       Gain in dB = 20*log ( 9.5486)
 
+         =19.95 dB
 
+#  DC Sweep
 
+![exp2_dc sweep last dia](https://github.com/user-attachments/assets/f0b84f42-2d9e-41ec-9ef9-4b0d32a6f779)
 
+We can observe the distorted output.
+
+From the graph Vipp=1.712-0.722
+
+                =0.99V
+
+Here Vicm(min)= Vth1+Vp
+        =0.473+0.4
+   Vicm(min) =0.873V
+
+Also,
+
+Vocm(max)= Vdd-(Iss*Rd)/2 +Vth
+
+       =2-(0.5*3.6)/2 +0.473
+
+ Vocm(max) = 1.573V
+
+ average of   Vicm(min) and  Vocm(max) =(0.873+1.573)/2
+
+             =1.223V
+
+ #  AC analysis
+
+ ![image](https://github.com/user-attachments/assets/a591ca5d-0933-48cd-915a-10637a2fcfde)
+
+  Gain in dB = 20*log ( 9.5486)
+
+         =19.95 dB
+         
+Here the value obtained from the analysis, 20.39dB almost equal to our theoritical value 19.95dB.
+
+#  Inference
+
+1. Performed the DC, transient and ac analysis of differential circuit with Resistor Rss, Replaced by tail current source and then by nmos using LTspice.
+
+2. The differential amplifier effectively amplifies the difference between two input signals while rejecting common-mode signals.
+
+3. Replacing the tail resistor with a current source improves the common-mode rejection ratio (CMRR) and overall performance.
+
+4. Increasing the width of the MOSFETs generally leads to higher gain but also increases power consumption.
+
+5. The choice of bias point significantly influences the amplifier's gain, linearity and power dissipation.
+
+6. Transient analysis reveals the amplifier's dynamic behavior and its ability to handle time-varying signals.
+
+7. AC analysis provides insights into the amplifier's frequency response, including bandwidth and any frequency-dependent limitations.
 
 
 
