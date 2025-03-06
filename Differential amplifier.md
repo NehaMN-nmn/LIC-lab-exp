@@ -3,6 +3,9 @@
 ## Introduction
 The differential amplifier is a crucial analog circuit that amplifies the difference between two input signals while rejecting common-mode signals, making it essential for applications requiring precise signal amplification and noise reduction; this experiment will investigate its key parameters, including differential-mode gain, common-mode gain, and CMRR, through practical measurements and analysis of a constructed circuit, thereby providing a hands-on understanding of its operational principles.
 
+![image](https://github.com/user-attachments/assets/841987ff-b78f-4ec4-ae59-acab16978d52)
+
+
 ## Two different modes of differentail amplifier :
 ### 1.Common mode :
 Common modes signal : (V1 + V2)/2
